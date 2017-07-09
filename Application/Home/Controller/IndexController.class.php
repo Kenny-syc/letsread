@@ -25,7 +25,7 @@ class IndexController extends Controller
         $password = I("password", "md5");   //接收密码并加密（数据库中是加密后的密码）
 
         $map['username'] = $username;
-        $admin = M('user')->where($map)->find(); //相当于select * from lsr_stu where username = '$username' limit 1;
+        $admin = M('stu')->where($map)->find(); //相当于select * from lsr_stu where username = '$username' limit 1;
         if($admin['password'] === $password)
         {
             echo '登录成功';
