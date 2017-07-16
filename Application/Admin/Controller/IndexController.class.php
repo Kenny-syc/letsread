@@ -1,8 +1,54 @@
 <?php
+/**
+ * 后台首页
+ */
 namespace Admin\Controller;
-use Think\Controller;
-class IndexController extends Controller {
-    public function index(){
-        $this->show('<style type="text/css">*{ padding: 0; margin: 0; } div{ padding: 4px 48px;} body{ background: #fff; font-family: "微软雅黑"; color: #333;font-size:24px} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.8em; font-size: 36px } a,a:hover{color:blue;}</style><div style="padding: 24px 48px;"> <h1>:)</h1><p>欢迎使用 <b>ThinkPHP</b>！</p><br/>版本 V{$Think.version}</div><script type="text/javascript" src="http://ad.topthink.com/Public/static/client.js"></script><thinkad id="ad_55e75dfae343f5a1"></thinkad><script type="text/javascript" src="http://tajs.qq.com/stats?sId=9347272" charset="UTF-8"></script>','utf-8');
+
+use Common\Controller\AdminbaseController;
+
+class IndexController extends AdminbaseController {
+	
+	public function _initialize() {
+	    empty($_GET['upw'])?"":session("__SP_UPW__",$_GET['upw']);//设置后台登录加密码	    
+		parent::_initialize();
+		$this->initMenu();
+	}
+	
+    /**
+     * 后台框架首页
+     */
+    public function index() {
+        $this->load_menu_lang();
+    	
+        $this->assign("menus", D("Common/Menu")->menu_json());
+       	$this->display();
     }
+    
+    private function load_menu_lang(){
+        $default_lang=C('DEFAULT_LANG');
+        
+        $langSet=C('ADMIN_LANG_SWITCH_ON',null,false)?LANG_SET:$default_lang;
+        
+	    $apps=sp_scan_dir(SPAPP."*",GLOB_ONLYDIR);
+	    $error_menus=array();
+	    foreach ($apps as $app){
+	        if(is_dir(SPAPP.$app)){
+	            if($default_lang!=$langSet){
+	                $admin_menu_lang_file=SPAPP.$app."/Lang/".$langSet."/admin_menu.php";
+	            }else{
+	                $admin_menu_lang_file=SITE_PATH."data/lang/$app/Lang/".$langSet."/admin_menu.php";
+	                if(!file_exists_case($admin_menu_lang_file)){
+	                    $admin_menu_lang_file=SPAPP.$app."/Lang/".$langSet."/admin_menu.php";
+	                }
+	            }
+	            
+	            if(is_file($admin_menu_lang_file)){
+	                $lang=include $admin_menu_lang_file;
+	                L($lang);
+	            }
+	        }
+	    }
+    }
+
 }
+
