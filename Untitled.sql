@@ -486,7 +486,7 @@ CREATE TABLE `lsr_posts` (
   KEY `post_parent` (`post_parent`),
   KEY `post_author` (`post_author`),
   KEY `post_date` (`post_date`) USING BTREE
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Portal文章表';
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Portal文章表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -495,6 +495,7 @@ CREATE TABLE `lsr_posts` (
 
 LOCK TABLES `lsr_posts` WRITE;
 /*!40000 ALTER TABLE `lsr_posts` DISABLE KEYS */;
+INSERT INTO `lsr_posts` VALUES (1,1,'','','2017-07-17 23:45:55','<p style=\"white-space: normal;\"><span style=\"color: rgb(114, 112, 113); font-family: 微软雅黑; font-size: 13px;\">天启文化教育科技（深圳）有限公司</span></p><p style=\"white-space: normal;\"><span style=\"color: rgb(114, 112, 113); font-family: 微软雅黑; font-size: 13px;\">电话：4006004048&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13510813646&nbsp;&nbsp;&nbsp;&nbsp;（非工作时间请拨打手机号）</span></p><p style=\"white-space: normal;\"><span style=\"color: rgb(114, 112, 113); font-family: 微软雅黑; font-size: 13px;\">邮箱：corp@1qiyuedu.cn</span></p><p style=\"white-space: normal;\"><span style=\"color: rgb(114, 112, 113); font-family: 微软雅黑; font-size: 13px;\">地址：深圳市南山区粤兴二道6号武汉大学深圳产学研大楼A902</span></p><p><span style=\"color: rgb(114, 112, 113); font-family: 微软雅黑; font-size: 13px;\"><br/></span></p><p><br/></p>','联系我们','',1,1,'2017-07-17 23:53:37',NULL,0,1,'',0,'{\"thumb\":\"portal\\/20170717\\/596cdd7e1e56b.jpg\",\"template\":\"about_us\"}',0,0,0,0),(2,1,'','','2017-07-17 23:46:30','<p style=\"margin-top: 0px; margin-bottom: 15px; white-space: normal; list-style: none; padding: 0px; color: rgb(114, 112, 113); font-size: 13px; font-family: 微软雅黑;\">一起阅读隶属天启文化教育科技（深圳）有限公司，是一家专注于中国儿童文学阅读支持的互联网教育公司。</p><p style=\"margin-top: 0px; margin-bottom: 15px; white-space: normal; list-style: none; padding: 0px; color: rgb(114, 112, 113); font-size: 13px; font-family: 微软雅黑;\">在全民阅读成为国家战略、中高考改革、素质教育全面发展等大背景下，我们会聚了一批全国知名的儿童文学阅读专家、语文教育专家、名优学校校长、优秀语文教师、互联网教育及技术行业精英，根据小学语文课程标准规定的各学年课外阅读总量及语文阅读能力培养目标，开发了国内首个儿童文学阅读支持系统。</p><p style=\"margin-top: 0px; margin-bottom: 15px; white-space: normal; list-style: none; padding: 0px; color: rgb(114, 112, 113); font-size: 13px; font-family: 微软雅黑;\">一起阅读集合了儿童文学专家及博士生团队的研究成果，为小学各年级学生选择出了适切的儿童文学阅读书单，为学生阅读相关文本提供了目标、方法与策略的指引，同时也为教师指导学生阅读相关文本提供了必要的协助。</p><p style=\"margin-top: 0px; margin-bottom: 15px; white-space: normal; list-style: none; padding: 0px; color: rgb(114, 112, 113); font-size: 13px; font-family: 微软雅黑;\">系统内容的呈现形式具有形象性、生动性和趣味性，能有效推动儿童阅读过程的完成，能评测相关文本的阅读质量，能激发学生文学阅读的兴趣并促成学生阅读习惯的养成，能策动学生分享阅读心得、经验与成果，并帮助学生通过阅读来更好地学习。</p><p style=\"margin-top: 0px; margin-bottom: 15px; white-space: normal; list-style: none; padding: 0px; color: rgb(114, 112, 113); font-size: 13px; font-family: 微软雅黑;\">该系统采用云服务技术，并将全面支持PC、电视盒子、Android及iOS平台移动设备。该系统通过建立阅读大数据，能为更多教育机构的决策者和广大教师提供有效的服务。</p><p><br/></p>','公司介绍','',1,1,'2017-07-17 23:53:23',NULL,0,1,'',0,'{\"thumb\":\"portal\\/20170717\\/596cdd7033fe3.jpg\",\"template\":\"about_us\"}',0,0,0,0);
 /*!40000 ALTER TABLE `lsr_posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -655,7 +656,7 @@ CREATE TABLE `lsr_term_relationships` (
   `status` int(2) NOT NULL DEFAULT '1' COMMENT '状态，1发布，0不发布',
   PRIMARY KEY (`tid`),
   KEY `term_taxonomy_id` (`term_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Portal 文章分类对应表';
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Portal 文章分类对应表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -664,6 +665,7 @@ CREATE TABLE `lsr_term_relationships` (
 
 LOCK TABLES `lsr_term_relationships` WRITE;
 /*!40000 ALTER TABLE `lsr_term_relationships` DISABLE KEYS */;
+INSERT INTO `lsr_term_relationships` VALUES (1,1,5,0,1),(2,2,5,0,1);
 /*!40000 ALTER TABLE `lsr_term_relationships` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -700,7 +702,7 @@ CREATE TABLE `lsr_terms` (
 
 LOCK TABLES `lsr_terms` WRITE;
 /*!40000 ALTER TABLE `lsr_terms` DISABLE KEYS */;
-INSERT INTO `lsr_terms` VALUES (1,'列表演示','','article','',0,0,'0-1','','','','list','article',0,1),(2,'瀑布流','','article','',0,0,'0-2','','','','list_masonry','article',0,1),(3,'新闻中心','','article','',0,0,'0-3','','','','list','article',0,1),(4,'渠道合作','','article','',0,0,'0-4','','','','list','article',0,1),(5,'关于我们','','article','',0,0,'0-5','','','','list','article',0,1),(6,'帮助中心','','article','',0,0,'0-6','','','','list','article',0,1),(7,'阅读教研','','article','',0,0,'0-7','','','','list','article',0,1),(8,'课题科研','','article','',7,0,'0-7-8','','','','list','article',0,1),(9,'课题申报书','','article','',8,0,'0-7-8-9','','','','list','article',0,1),(10,'开题报告书','','article','',8,0,'0-7-8-10','','','','list','article',0,1),(11,'研究论文','','article','',8,0,'0-7-8-11','','','','list','article',0,1),(12,'教师培训','','article','',7,0,'0-7-12','','','','list','article',0,1),(13,'教学设计','','article','',7,0,'0-7-13','','','','list','article',0,1),(14,'阅读活动','','article','',7,0,'0-7-14','','','','list','article',0,1),(15,'教学微课','','article','',7,0,'0-7-15','','','','list','article',0,1),(16,'专家指导','','article','',7,0,'0-7-16','','','','list','article',0,1),(17,'名师教学心得','','article','',7,0,'0-7-17','','','','list','article',0,1),(18,'省平台资源','','article','',7,0,'0-7-18','','','','list','article',0,1),(19,'课堂实录','','article','',7,0,'0-7-19','','','','list','article',0,1);
+INSERT INTO `lsr_terms` VALUES (1,'列表演示','','article','',0,0,'0-1','','','','list','article',0,1),(2,'瀑布流','','article','',0,0,'0-2','','','','list_masonry','article',0,1),(3,'新闻中心','','article','',0,0,'0-3','','','','list','article',0,1),(4,'渠道合作','','article','',0,0,'0-4','','','','list','article',0,1),(5,'关于我们','','article','',0,0,'0-5','','','','about_us','article',0,1),(6,'帮助中心','','article','',0,0,'0-6','','','','list','article',0,1),(7,'阅读教研','','article','',0,0,'0-7','','','','list','article',0,1),(8,'课题科研','','article','',7,0,'0-7-8','','','','list','article',0,1),(9,'课题申报书','','article','',8,0,'0-7-8-9','','','','list','article',0,1),(10,'开题报告书','','article','',8,0,'0-7-8-10','','','','list','article',0,1),(11,'研究论文','','article','',8,0,'0-7-8-11','','','','list','article',0,1),(12,'教师培训','','article','',7,0,'0-7-12','','','','list','article',0,1),(13,'教学设计','','article','',7,0,'0-7-13','','','','list','article',0,1),(14,'阅读活动','','article','',7,0,'0-7-14','','','','list','article',0,1),(15,'教学微课','','article','',7,0,'0-7-15','','','','list','article',0,1),(16,'专家指导','','article','',7,0,'0-7-16','','','','list','article',0,1),(17,'名师教学心得','','article','',7,0,'0-7-17','','','','list','article',0,1),(18,'省平台资源','','article','',7,0,'0-7-18','','','','list','article',0,1),(19,'课堂实录','','article','',7,0,'0-7-19','','','','list','article',0,1);
 /*!40000 ALTER TABLE `lsr_terms` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -773,7 +775,7 @@ CREATE TABLE `lsr_users` (
 
 LOCK TABLES `lsr_users` WRITE;
 /*!40000 ALTER TABLE `lsr_users` DISABLE KEYS */;
-INSERT INTO `lsr_users` VALUES (1,'lsradmin','###aa56facafc95020901eb2280f92980b7','admin','he0zeng@gmail.com','',NULL,0,'2000-01-01',NULL,'0.0.0.0','2017-07-16 11:04:03','2017-07-16 11:04:03','',1,0,1,0,'');
+INSERT INTO `lsr_users` VALUES (1,'lsradmin','###aa56facafc95020901eb2280f92980b7','admin','he0zeng@gmail.com','',NULL,0,'2000-01-01',NULL,'0.0.0.0','2017-07-17 09:18:03','2017-07-16 11:04:03','',1,0,1,0,'');
 /*!40000 ALTER TABLE `lsr_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -786,4 +788,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-16 23:43:47
+-- Dump completed on 2017-07-18  0:00:09

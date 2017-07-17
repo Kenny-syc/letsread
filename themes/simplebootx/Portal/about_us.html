@@ -1,0 +1,31 @@
+<extend name="Public/news_base"/>
+
+<block name="main">
+    <!--主内容-->
+<php>
+    $tag = 'cid:5;field:object_id,term_id,post_title,post_content,smeta;order:listorder asc';
+    $where = ['post_status'=>1];
+    $posts = sp_sql_posts($tag,$where);
+</php>
+
+<div class="midArea">
+    <li class="title">关于我们</li>
+    <volist name = "posts" id = "vo">
+
+        <div class="midContent">
+            <php>
+                $smeta = json_decode($vo['smeta'],true);//转化为数组
+            </php>
+            <div class="midContent1">
+                <img  src=" {$smeta.thumb|sp_get_asset_upload_path}"/>
+            </div>
+
+            <div class="midContent2">
+                <div class="smalltitle">{$vo.post_title}</div>
+            <div class = "article">{$vo.post_content}</div>
+            </div>
+        </div>
+
+    </volist>
+</div>
+</block>

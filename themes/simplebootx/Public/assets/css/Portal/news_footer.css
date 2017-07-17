@@ -1,0 +1,29 @@
+/*底部*/
+li{
+    list-style:none;
+}
+#footerArea{
+    background-color:#d0dfce;
+}
+#footerBig
+{
+    width:100%;
+    height:100px;
+
+}
+#footerMid
+{
+    height:100%;
+    width:1000px;
+    margin:0 0 0 26%;
+    background-color:#d0dfce;
+}
+.footerContent{
+    height:100%;
+    width:170px;
+    border:1px solid black;
+    border-top-width:0;
+    border-bottom-width:0;
+    border-right-width:0;
+}
+/*底部*/
