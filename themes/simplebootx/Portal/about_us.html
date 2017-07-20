@@ -1,31 +1,56 @@
+
+<!--关于我们-->
 <extend name="Public/news_base"/>
+<block name="head">
+    <title>朝夕绘馆-新闻中心</title>
+    <link rel="stylesheet" href="__TMPL__Public/assets/css/Portal/about_us.css">
+</block>
 
 <block name="main">
     <!--主内容-->
 <php>
-    $tag = 'cid:5;field:object_id,term_id,post_title,post_content,smeta;order:listorder asc';
-    $where = ['post_status'=>1];
-    $posts = sp_sql_posts($tag,$where);
+//    $tag = 'cid:5;field:object_id,term_id,post_title,post_content,smeta;order:listorder asc';
+//    $where = ['post_status'=>1];
+//    $posts = sp_sql_posts($tag,$where);
 </php>
 
 <div class="midArea">
     <li class="title">关于我们</li>
-    <volist name = "posts" id = "vo">
-
+        <php>
+            $id=5;    //posts表里的文章id
+            $posts=sp_sql_post($id,'field:post_title,post_content,smeta');
+        </php>
         <div class="midContent">
             <php>
-                $smeta = json_decode($vo['smeta'],true);//转化为数组
+                $smeta = json_decode($posts['smeta'],true);//转化为数组
             </php>
             <div class="midContent1">
                 <img  src=" {$smeta.thumb|sp_get_asset_upload_path}"/>
             </div>
 
             <div class="midContent2">
-                <div class="smalltitle">{$vo.post_title}</div>
-            <div class = "article">{$vo.post_content}</div>
+                <div class="smalltitle">{$posts.post_title}</div>
+            <div class = "article">{$posts.post_content}</div>
             </div>
         </div>
 
-    </volist>
+        <php>
+            $id=4;    //posts表里的文章id
+            $posts=sp_sql_post($id,'field:post_title,post_content,smeta');
+        </php>
+        <div class="midContent">
+            <php>
+                $smeta = json_decode($posts['smeta'],true);//转化为数组
+            </php>
+            <div class="midContent1">
+                <img  src=" {$smeta.thumb|sp_get_asset_upload_path}"/>
+            </div>
+
+            <div class="midContent2">
+                <div class="smalltitle">{$posts.post_title}</div>
+                <div class = "article">{$posts.post_content}</div>
+            </div>
+        </div>
 </div>
 </block>
+

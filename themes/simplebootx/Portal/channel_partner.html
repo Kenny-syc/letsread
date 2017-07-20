@@ -1,0 +1,80 @@
+<extend name="Public/news_base"/>
+
+<block name="head">
+    <title>朝夕绘馆-渠道合作</title>
+    <link rel="stylesheet" href="__TMPL__Public/assets/css/Portal/channel_partner.css">
+</block>
+
+<block name="main">
+<php>
+    $id = 6;
+    $posts = sp_sql_post($id,'field:post_title,post_content');
+</php>
+
+<div class="midArea">
+<li class="title">{$posts.post_title}</li></br>
+	<div class="midContent">
+        {$posts.post_content}
+	</div>
+</div>
+
+<div class="midArea">
+    <li class="title">合作流程</li>
+	<div class="midContent">
+        	<div class="position">
+            	<div class="float liCenter">
+            		<div class="icon">
+                        <img src="__TMPL__Public/assets/images/Portal/channel_partner/p1.jpg"/>
+                    </div>
+                	<li>联系我们</li>
+                </div>
+                <div class="float liCenter">
+                	<div class="icon float">
+                        <img src="__TMPL__Public/assets/images/Portal/channel_partner/p2.jpg"/>
+                    </div>
+                	<li>相互沟通</li>
+                </div>
+                <div class="float liCenter">
+                	<div class="icon float">
+                        <img src="__TMPL__Public/assets/images/Portal/channel_partner/p3.jpg"/>
+                    </div>
+                	<li>来公司考察</li>
+                </div>
+                <div class="float liCenter">
+                	<div class="icon float">
+                        <img src="__TMPL__Public/assets/images/Portal/channel_partner/p4.jpg"/>
+                    </div>
+                	<li>签订协议</li>
+                </div>
+            </div>
+            <div class="position">
+            	<div class="float liCenter">
+            		<div class="icon">
+                        <img src="__TMPL__Public/assets/images/Portal/channel_partner/p5.jpg"/>
+                    </div>
+                	<li>支付保证金</li>
+                </div>
+                <div class="float liCenter">
+                	<div class="icon float">
+                        <img src="__TMPL__Public/assets/images/Portal/channel_partner/p6.jpg"/>
+                    </div>
+                	<li>生成后台系统</li>
+                </div>
+                <div class="float liCenter">
+                	<div class="icon float">
+                        <img src="__TMPL__Public/assets/images/Portal/channel_partner/p7.jpg"/>
+                    </div>
+                	<li>产品、系统、市场模式培训和考核</li>
+                </div>
+                <div class="float liCenter">
+                	<div class="icon float">
+                        <img src="__TMPL__Public/assets/images/Portal/channel_partner/p8.jpg"/>
+                    </div>
+                	<li>正式开始运营</li>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+</block>

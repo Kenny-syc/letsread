@@ -1,0 +1,79 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Class/index')}">班级管理</a></li>
+			<li class="active"><a href="{:U('Class/add')}">添加班级</a></li>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form" action="{:U('nav/add_post')}">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">学校:</label>
+					<div class="controls">
+						<input type="text" name="label" value=""><span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">年级:</label>
+					<div class="controls">
+						<input type="text" name="label" value=""><span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">班级:</label>
+					<div class="controls">
+						<input type="text" name="label" value=""><span class="form-required">*</span>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label">备注:</label>
+					<div class="controls">
+						<textarea name="remark" rows="2" cols="20" id="remark" class="inputtext" style="height: 100px; width: 500px;"></textarea>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">审核状态</label>
+					<div class="controls">
+						<label class="radio inline" for="active_true"><input type="radio" name="status" value="1" checked id="active_true" />已审核</label>
+						<label class="radio inline" for="active_false"><input type="radio" name="status" value="0" id="active_false">未审核</label>
+					</div>
+				</div>
+			</fieldset>
+			<div class="form-actions">
+				<button type="submit" class="btn btn-primary js-ajax-submit">{:L('ADD')}</button>
+				<a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+			</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	<script>
+		$(function() {
+			$("#navcid_select").change(function() {
+				if(location.search.indexOf("?")>=0){
+					location.href = location.href + "&cid=" + $(this).val();
+				}else{
+					location.href = location.href + "?cid=" + $(this).val();
+				}
+			});
+
+			$("#selecthref,#selecturl_radio").click(function() {
+				$('#outlink_input').removeAttr('name');
+				$(this).attr('name','href');
+				$('#selecturl_radio').attr({
+					'checked' : 'checked'
+				});
+			});
+			$("#outlink_input,#outlink_radio").click(function() {
+				$('#selecthref').removeAttr('name');
+				$('#outlink_input').attr('name','external_href');
+				$('#outlink_radio').attr({
+					'checked' : 'checked'
+				});
+			});
+		});
+	</script>
+
+</body>
+</html>
