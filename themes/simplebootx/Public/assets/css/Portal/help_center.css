@@ -1,0 +1,94 @@
+/*常见问题*/
+.title{
+    font-weight:bold;
+    font-size:20px;
+    line-height:70px;
+}
+.middleBody{
+    width:900px;
+    height:45px;
+}
+.leftTitle{
+    background:#9fcec4;
+    color:#585657;
+    font-size:14px;
+    height:35px;
+    width:98px;
+    text-align:center;
+    line-height:35px;
+    margin-right:4px;
+}
+.middleBig{
+    height:435px;
+    width:920px;
+    background:#f7f0e0;
+}
+.middleLeft{
+    height:435px;
+    width:200px;
+    background:white;
+}
+.middleLeftContent{
+    text-align:center;
+    margin:30% 0 0 0;
+}
+.leftChoose{
+    cursor:pointer;
+    line-height:30px;
+    font-size:14px;
+    color:#575654;
+}
+.middleRight{
+    height:435px;
+    width:710px;
+    background:white;
+    float:right;
+}
+.middleRightContent{
+    width:500px;
+    margin:5% 5% 0 0;/*加了5%*/
+    float:right;
+}
+#a1{
+    color:#e16781;
+}
+#a11{
+    color:#e16781;
+}
+#teacherChoose{
+    color:#ee745d;
+}
+#questionMid{
+    margin:50px 0 0 18%;
+}
+.answer{
+    font-size:12px;
+}
+/*常见问题*/
+/*意见反馈*/
+#suggestionBig{
+    height:356px;
+    width:940px;
+    margin:0 0 0 18%;
+}
+#suggestionTextarea{
+    height:190px;
+    width:915px;
+    border:0;
+}
+#suggestionText{
+    height:48px;
+    width:810px;
+    border:0;
+}
+#suggestionButton{
+    height:48px;
+    line-height:48px;
+    width:130px;
+    background:#9fcec4;
+    border:0;
+    color:#ee7759;
+    font-size:15px;
+    font-weight:bold;
+}
+/*意见反馈*/

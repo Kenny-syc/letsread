@@ -1,0 +1,218 @@
+<!--关于我们-->
+
+<extend name="Public/news_base"/>
+<block name="head">
+    <title>朝夕绘馆-帮助中心</title>
+
+    <link rel="stylesheet" href="__TMPL__Public/assets/css/Portal/help_center.css">
+    <script src="__TMPL__Public/assets/js/Portal/help_center.js"></script>
+</block>
+
+<block name="main">
+
+    <!--常见问题-->
+    <div id="questionMid">
+        <li class="title">常见问题</li>
+        <div class="middleBody">
+            <li id="teacherChoose" class="leftTitle float" onclick="chooseTeacher()">老师</li>
+            <li id="studentChoose" class="leftTitle float" onclick="chooseStudent()">学生</li>
+        </div>
+        <div id="area1" class="middleBig" style="display:block">
+            <div class="middleLeft float">
+                <div class="middleLeftContent">
+                    <a id="a1" class="leftChoose" onclick="removeElement1(hideId1,resumeColor1)">下载</a><br />
+                    <a id="a2" class="leftChoose" onclick="removeElement2(hideId1,resumeColor1)">登录</a><br />
+                    <a id="a3" class="leftChoose" onclick="removeElement3(hideId1,resumeColor1)">阅读计划</a><br />
+                    <a id="a4" class="leftChoose" onclick="removeElement4(hideId1,resumeColor1)">图书相关</a><br />
+                    <a id="a5" class="leftChoose" onclick="removeElement5(hideId1,resumeColor1)">班级</a><br />
+                    <a id="a6" class="leftChoose" onclick="removeElement6(hideId1,resumeColor1)">消息</a><br />
+                    <a id="a7" class="leftChoose" onclick="removeElement7(hideId1,resumeColor1)">客服</a><br />
+                </div>
+                <script>
+                    var b1=document.getElementById("a1");
+                    var resumeColor1=b1;
+                    var b2=document.getElementById("a2");
+                    var b3=document.getElementById("a3");
+                    var b4=document.getElementById("a4");
+                    var b5=document.getElementById("a5");
+                    var b6=document.getElementById("a6");
+                    var b7=document.getElementById("a7");
+                </script>
+            </div>
+            <div class="middleRight">
+                <div id="p1" class="middleRightContent" style="display:block">
+                    <h5>朝夕绘馆学生端和教师端PC网页版地址是什么？</h5>
+                    <p class="answer">在浏览器输入地址：# 就可以找到我们啦，学生端和教师端目前支持PC，其他设备支持随后推出。</p>
+                </div>
+                <div id="p2" class="middleRightContent" style="display:none">
+                    <h5>忘记账号了怎么办？</h5>
+                    <p class="answer">您可以在登录界面中选择“忘记账号”，通过填写个人详细信息之后即可查询到您的账号。</p>
+                    <h5>忘记密码了怎么办？</h5>
+                    <p class="answer">您可以在登录界面中选择“忘记密码”，通过注册手机号码验证即可重置密码；或者通过在线客服申诉找回密码。</p>
+                </div>
+                <div id="p3" class="middleRightContent" style="display:none">
+                    <h5>默认的阅读计划可以修改吗？</h5>
+                    <p class="answer">不可以，但您可以在默认阅读计划的基础上创建副本。</p>
+                    <h5>在哪里查看学生阅读过程或进度？</h5>
+                    <p class="answer">阅读计划中点击“阅读动态”可以查看家长上传的学生阅读情况及进度。</p>
+                </div>
+                <div id="p4" class="middleRightContent" style="display:none">
+                    <h5>我想推荐的图书在图书商城中没有怎么办？</h5>
+                    <p class="answer">您可以在图书商城搜索栏下方的标签中点击“我推荐的图书”即可按照操作提示添加新的图书，通过管理员的审核后即可在图书商城中查看哦。</p>
+                    <h5>我发现有些测评题目显示是错误的，或者答案错误，怎么办？</h5>
+                    <p class="answer">您可以在“题目”页面点击右上角的“报错”按钮，进行题目报错，我们的工作人员收到反馈会及时修正的哦。</p>
+                    <h5>我可以自己出图书的测评题吗？ 如果可以该怎么上传呢？</h5>
+                    <p class="answer">（1）您只能上传自己推荐的新图书的测评题哦，已经存在的图书测评题暂时不支持修改/创建新测评题，或许以后可以哦；
+                        （2）您推荐新图书的时候，按照提示即可下载测评题模板并上传测评题。
+                    </p>
+                    <p class="answer">（3）如果有需求可以拨打客服电话400-600-4048寻求我们的帮助哦。</p>
+                </div>
+                <div id="p5" class="middleRightContent" style="display:none">
+                    <h5>我可以添加新的班级吗？</h5>
+                    <p class="answer">可以的，在“我的班级”中可以添加新班级哦。</p>
+                    <h5>我在注册时选择学校，但是并没有我所在的学校名称，怎么办？</h5>
+                    <p class="answer">若出现上述情况，烦请您致电客服400-600-4048，我们会尽快帮您加入您的学校。</p>
+                </div>
+                <div id="p6" class="middleRightContent" style="display:none">
+                    <h5>已删除的消息还能够看见吗？</h5>
+                    <p class="answer">已删除的消息是没有办法找回来的哦。</p>
+                    <h5>为什么我退出账号重新登录后，以前的消息都木有了呢？</h5>
+                    <p class="answer">请刷新消息页面，如还是看不到历史消息，请联系客服。</p>
+                </div>
+                <div id="p7" class="middleRightContent" style="display:none">
+                    <h5>我遇到一些问题和一些建议需要与你们交流，怎么联系你们呢？</h5>
+                    <p class="answer">您可选择以下三种途径进行反馈：
+                        （1）客服电话400-600-4048 13510813646    周一至周日 9:30-21:30
+                        （2）客服邮箱：service@1qiyuedu.cn
+                        （3）在帮助中心页面填写“意见反馈”进行反馈。</p>
+                    <h5>我想查看使用说明和相关新闻，在哪里查看？</h5>
+                    <p class="answer">您可选择以下方式：
+                        朝夕绘馆网址：#,是我们的官方网站哦。</p>
+                </div>
+            </div>
+            <script>
+                var a1=document.getElementById("p1");
+                var hideId1=a1;
+                var a2=document.getElementById("p2");
+                var a3=document.getElementById("p3");
+                var a4=document.getElementById("p4");
+                var a5=document.getElementById("p5");
+                var a6=document.getElementById("p6");
+                var a7=document.getElementById("p7");
+            </script>
+        </div>
+        <div id="area2" class="middleBig" style="display:none">
+            <div class="middleLeft float">
+                <div class="middleLeftContent">
+                    <a id="a11" class="leftChoose" onclick="removeElement11(hideId2,resumeColor2)">下载</a><br />
+                    <a id="a22" class="leftChoose" onclick="removeElement22(hideId2,resumeColor2)">登录</a><br />
+                    <a id="a33" class="leftChoose" onclick="removeElement33(hideId2,resumeColor2)">阅读计划</a><br />
+                    <a id="a44" class="leftChoose" onclick="removeElement44(hideId2,resumeColor2)">图书相关</a><br />
+                    <a id="a55" class="leftChoose" onclick="removeElement55(hideId2,resumeColor2)">班级</a><br />
+                    <a id="a66" class="leftChoose" onclick="removeElement66(hideId2,resumeColor2)">消息</a><br />
+                    <a id="a77" class="leftChoose" onclick="removeElement77(hideId2,resumeColor2)">客服</a><br />
+                </div>
+                <script>
+                    var b11=document.getElementById("a11");
+                    var resumeColor2=b11;
+                    var b22=document.getElementById("a22");
+                    var b33=document.getElementById("a33");
+                    var b44=document.getElementById("a44");
+                    var b55=document.getElementById("a55");
+                    var b66=document.getElementById("a66");
+                    var b77=document.getElementById("a77");
+                </script>
+            </div>
+            <div class="middleRight">
+                <div id="p11" class="middleRightContent" style="display:block">
+                    <h5>朝夕绘馆学生端和教师端PC网页版地址是什么？</h5>
+                    <p class="answer">在浏览器输入地址：# 就可以找到我们啦，学生端和教师端目前支持PC，其他设备支持随后推出。</p>
+                </div>
+                <div id="p22" class="middleRightContent" style="display:none">
+                    <h5>忘记账号了怎么办？</h5>
+                    <p class="answer">您可以在登录界面中选择“忘记账号”，通过填写个人详细信息之后即可查询到您的账号。</p>
+                    <h5>忘记密码了怎么办？</h5>
+                    <p class="answer">您可以在登录界面中选择“忘记密码”，通过注册手机号码验证即可重置密码；或者通过在线客服申诉找回密码。</p>
+                </div>
+                <div id="p33" class="middleRightContent" style="display:none">
+                    <h5>老师发布的阅读计划的图书读完了，为什么显示还是阅读中？</h5>
+                    <p class="answer">阅读完图书，请点击“阅读闯关”进行闯关来检查阅读效果，闯关后就会显示阅读完成。</p>
+                    <h5>我自己读的书，再进行“阅读闯关”会留下记录吗？</h5>
+                    <p class="answer">会的哦。</p>
+                </div>
+                <div id="p44" class="middleRightContent" style="display:none">
+                    <h5>答题闯关时，总提示提交失败怎么办？</h5>
+                    <p class="answer">如果出现这样的情况，请尽快拨打客服电话400-600-4048，联系我们哦。</p>
+                    <h5>阅读闯关时，发现有些题目有问题，比如错误或者选项看不到，怎么办？</h5>
+                    <p class="answer">如果出现这样的情况，请尽快拨打客服电话400-600-4048，联系我们哦。</p>
+                    <h5>错题可以重做吗？</h5>
+                    <p class="answer">可以哦，您可以多次进行闯关重做题目。
+                    </p>
+                </div>
+                <div id="p55" class="middleRightContent" style="display:none">
+                    <h5>为什么我输入了老师给的号码，但是无法加入，系统提示老师号错误？</h5>
+                    <p class="answer">可能有两个原因：
+                        （1） 可能是输入号码时输错了，所以找不到班级。
+                        （2） 如果仔细检查后发现号码没有输入错误，那就是老师给的号码有误，您可以告知老师。</p>
+                    <h5>误加入的班级我能退出吗？</h5>
+                    <p class="answer">可以的，在首页中点击“输入老师号码”按照操作提示即可修改班级。</p>
+                </div>
+                <div id="p66" class="middleRightContent" style="display:none">
+                    <h5>同学之间可以私信吗？</h5>
+                    <p class="answer">可以，在“个人中心”的消息中心中给同学发送消息哦。</p>
+                    <h5>已删除的消息还能够看见吗？</h5>
+                    <p class="answer">已删除的消息是没有办法找回来的哦。</p>
+                    <h5>为什么我退出账号重新登录后，以前的消息都木有了呢？</h5>
+                    <p class="answer">请刷新消息页面，如还是看不到历史消息，请联系客服。</p>
+                </div>
+                <div id="p77" class="middleRightContent" style="display:none">
+                    <h5>我遇到一些问题和一些建议需要与你们交流，怎么联系你们呢？</h5>
+                    <p class="answer">您可选择以下三种途径进行反馈：
+                        （1）客服电话400-600-4048    13510813646 周一至周日 9:30-21:30
+                        （2）客服邮箱：service@1qiyuedu.cn
+                        （3）在帮助中心页面填写“意见反馈”进行反馈。</p>
+                    <h5>我想查看使用说明和相关新闻，在哪里查看？</h5>
+                    <p class="answer">您可选择以下方式：
+                        朝夕绘馆网址：#,是我们的官方网站哦。</p>
+                </div>
+            </div>
+            <script>
+                var a11=document.getElementById("p11");
+                var hideId2=a11;
+                var a22=document.getElementById("p22");
+                var a33=document.getElementById("p33");
+                var a44=document.getElementById("p44");
+                var a55=document.getElementById("p55");
+                var a66=document.getElementById("p66");
+                var a77=document.getElementById("p77");
+            </script>
+        </div>
+    </div>
+    <!--常见问题-->
+    <!--意见反馈-->
+    <div id="suggestionBig">
+        <li class="title">意见反馈</li>
+        <textarea id="suggestionTextarea" placeholder="请输入您的建议····"></textarea>
+        <br>
+        <input id="suggestionText" placeholder="请留下真实联系方式（邮箱、QQ），方便我们答疑解惑！" type="text" />
+        <input id="suggestionButton" value="提交建议" onclick="suggestionSend()" type="button" />
+        <script>
+            function suggestionSend()
+            {
+                var a=document.getElementById("suggestionTextarea");
+                if(a.value=="")
+                {
+                    alert("请填写反馈内容");
+                }
+                else
+                {
+                    alert("谢谢您的反馈，工作人员会及时处理");
+                    /*发送*/
+                }
+            }
+        </script>
+    </div>
+    <!--意见反馈-->
+
+</block>
+

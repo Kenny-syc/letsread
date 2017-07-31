@@ -1,17 +1,16 @@
 /*头部*/
 body{
+    background-color:#f7f0e0;
     margin: 0;
 }
 li{
     list-style:none;
-    margin:0 50px 0 0;
 }
 ul{
     vertical-align:middle;
 }
 a{
     display:block;
-    float:left;
     text-decoration: none;
     color:black;
 }
@@ -47,5 +46,8 @@ a:hover{
     margin:40px 0 0 50px;
     font-size:16px;
     font-weight:bold;
+}
+.headerTitle{
+    margin:0 25px;
 }
 /*头部*/
