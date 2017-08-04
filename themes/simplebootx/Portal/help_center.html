@@ -2,7 +2,7 @@
 
 <extend name="Public/news_base"/>
 <block name="head">
-    <title>朝夕绘馆-帮助中心</title>
+    <title>朝夕绘馆-bang</title>
 
     <link rel="stylesheet" href="__TMPL__Public/assets/css/Portal/help_center.css">
     <script src="__TMPL__Public/assets/js/Portal/help_center.js"></script>
@@ -189,30 +189,39 @@
         </div>
     </div>
     <!--常见问题-->
+
+
+
     <!--意见反馈-->
-    <div id="suggestionBig">
+    <form id="suggestionBig" method="post" action="{:U('api/Suggest/addmsg')}">
         <li class="title">意见反馈</li>
-        <textarea id="suggestionTextarea" placeholder="请输入您的建议····"></textarea>
+        <textarea name="suggest_text" id="suggestionTextarea" placeholder="请输入您的建议····" ></textarea>
         <br>
-        <input id="suggestionText" placeholder="请留下真实联系方式（邮箱、QQ），方便我们答疑解惑！" type="text" />
-        <input id="suggestionButton" value="提交建议" onclick="suggestionSend()" type="button" />
-        <script>
-            function suggestionSend()
+        <input type="text" name="suggest_address" id="suggestionText" placeholder="请留下真实联系方式（邮箱、QQ），方便我们答疑解惑！"/>
+        <br>
+        <br>
+        <!--<input type="submit" id="suggestionButton" value="提交建议" onclick="suggestionSend()" />-->
+        <button type="submit" onclick="suggestionSend()" id = "suggestionButton">提交建议</button>
+    </form>
+    <script>
+        function suggestionSend()
+        {
+            var a=document.getElementById("suggestionTextarea");
+            if(a.value=="")
             {
-                var a=document.getElementById("suggestionTextarea");
-                if(a.value=="")
-                {
-                    alert("请填写反馈内容");
-                }
-                else
-                {
-                    alert("谢谢您的反馈，工作人员会及时处理");
-                    /*发送*/
-                }
+                alert("请填写反馈内容");
+                location.go(0);
             }
-        </script>
-    </div>
+            else
+            {
+                alert("谢谢您的反馈，工作人员会及时处理");
+                /*发送*/
+            }
+        }
+    </script>
     <!--意见反馈-->
+
+
 
 </block>
 
