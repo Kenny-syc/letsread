@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<!--首页导航栏-->
+<ul>
+    <li class="logo">
+        <a href="__ROOT__/" class="n_logo">
+            <img src="__TMPL__Public/assets/images/Portal/logo_03.png"/>
+        </a>
+    </li>
+</ul>
+<div class="nav-go">
+    <php>
+        $menu_root_ul_id="";/*ul的样式*/
+        $filetpl="<a href='\$href' target='\$target'>\$label</a>";
+        $foldertpl="<a class='' href='\$href'>\$label</a>";/*二级菜单链接*/
+        $ul_class="" ;/*内部ul标签的class属性值*/
+        $li_class="" ;/*内部li标签的class属性值*/
+        $menu_root_ul_class="";/*菜单根节点ul标签的class属性值*/
+        $showlevel=3;/*显示菜单的层级*/
+        $dropdown='';/*含有子菜单的li标签的class属性值,用于控制多级菜单的折叠*/
+    </php>
+    {:sp_get_menu("2",$menu_root_ul_id,$filetpl,$foldertpl,$ul_class,$li_class,$menu_root_ul_class,$showlevel,$dropdown)}
+    <ul>
+        <li class="login">
+            <a href="">登录</a>
+        </li>
+    </ul>
+</div>

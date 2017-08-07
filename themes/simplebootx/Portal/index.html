@@ -1,155 +1,304 @@
 <!DOCTYPE html>
-	<html>
-	<head>
-		<title>朝夕绘馆-登录</title>
-		<meta name="keywords" content="{$site_seo_keywords}" />
-		<meta name="description" content="{$site_seo_description}">
-		<tc_include file="Public:head" />
-		<link href="__TMPL__Public/assets/css/slippry/slippry.css" rel="stylesheet">
-		<style>
-			.caption-wraper{position: absolute;left:50%;bottom:2em;}
-			.caption-wraper .caption{
-			position: relative;left:-50%;
-			background-color: rgba(0, 0, 0, 0.54);
-			padding: 0.4em 1em;
-			color:#fff;
-			-webkit-border-radius: 1.2em;
-			-moz-border-radius: 1.2em;
-			-ms-border-radius: 1.2em;
-			-o-border-radius: 1.2em;
-			border-radius: 1.2em;
-			}
-			@media (max-width: 767px){
-				.sy-box{margin: 12px -20px 0 -20px;}
-				.caption-wraper{left:0;bottom: 0.4em;}
-				.caption-wraper .caption{
-				left: 0;
-				padding: 0.2em 0.4em;
-				font-size: 0.92em;
-				-webkit-border-radius: 0;
-				-moz-border-radius: 0;
-				-ms-border-radius: 0;
-				-o-border-radius: 0;
-				border-radius: 0;}
-			}
-		</style>
-	</head>
-<body class="body-white">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>朝夕绘馆-登录</title>
+	<link type="text/css" rel="stylesheet" href="__TMPL__Public/assets/css/Portal/index.css">
+	<script type="text/javascript" src="__TMPL__Public/assets/js/Portal/home-module.js.下载"></script>
+	<script type="text/javascript" src="__TMPL__Public/assets/js/Portal/tab.js.下载"></script>
+	<script type="text/javascript" src="__TMPL__Public/assets/js/Portal/jquery.cookie.js.下载"></script>
+	<script type="text/javascript" src="__TMPL__Public/assets/js/Portal/layer.js.下载"></script>
+	<link rel="stylesheet" href="__TMPL__Public/assets/css/Portal/layer.css" id="layui_layer_layercss">
+	<link rel="stylesheet" href="__TMPL__Public/assets/css/Portal/layer(1).css" id="layui_layer_skinlayercss">
+	<script type="text/javascript">
+        $(function () {
+            var $window = $(window), window_width = $window.width();
+            $('#js_banner, #js_banner_img li').width(window_width);
+            new $.Tab({
+                target: $('#js_banner_img li'),
+                effect: 'slide3d',
+                animateTime: 1000,
+                stay: 13500,
+                autoPlay: true,
+                merge: true,
+                prevBtn: $('#js_banner_pre'),
+                nextBtn: $('#js_banner_next')
+            });
+        });
+	</script>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
 
-<!--导航栏-->
-<tc_include file="Public:nav" />
+</head>
+<body id="top">
+<input type="hidden" name="service" value="">
+<div class="top">
+	<div class="nav">
 
-<!--幻灯片开始-->
-<!--根据分类标识获取幻灯片。如果为空，则使用默认幻灯片-->
-<php>
-$home_slides=sp_getslide("home_ppt");
+		<!-- 这是头部导航栏 -->
+		<tc_include file="Public:home_header" />
 
-$home_slides=empty($home_slides)?$default_home_slides:$home_slides;
-</php>
-<!--开始生成幻灯片-->
-<ul id="homeslider" class="unstyled">
-	<!--thinkphp的foreach函数,也可以用volist-->
-	<foreach name="home_slides" item="vo">
-	<li>
-		<!--显示图片名字-->
-		<div class="caption-wraper">
-			<div class="caption">{$vo.slide_name}</div>
-		</div>
-		<!--显示图片内容-->
-		<img src="{:sp_get_asset_upload_path($vo['slide_pic'])}" alt="">
-	</li>
-	</foreach>
-</ul>
-<!--幻灯片结束-->
-
-<div class="container">
-	
-	<div>
-		<h1 class="text-center">快速了解ThinkCMF</h1>
-		<h3 class="text-center">Quickly understand the ThinkCMF</h3>
-	</div>
-	<div class="row">
-		<div class="span4">
-			 <h2 class="font-large nospace"><i class="fa fa-bars"></i> MVC分层模式</h2>
-             <p>使用MVC应用程序被分成三个核心部件：模型（M）、视图（V）、控制器（C），他不是一个新的概念，只是ThinkCMF将其发挥到了极致。</p>
-		</div>
-		<div class="span4">
-			 <h2 class="font-large nospace"><i class="fa fa-group"></i> 用户管理</h2>
-             <p>ThinkCMF内置了灵活的用户管理方式，并可直接与第三方站点进行互联互通，如果你愿意甚至可以对单个用户或群体用户的行为进行记录及分享，为您的运营决策提供有效参考数据。</p>
-		</div>
-		<div class="span4">
-			  <h2 class="font-large nospace"><i class="fa fa-cloud"></i> 云端部署</h2>
-              <p>通过驱动的方式可以轻松支持云平台的部署，让你的网站无缝迁移，内置已经支持SAE、BAE，正式版将对云端部署进行进一步优化。</p>
-		</div>
-	</div>
-	
-	<div class="row">
-		<div class="span4">
-			 <h2 class="font-large nospace"><i class="fa fa-heart"></i> 安全策略</h2>
-             <p>提供的稳健的安全策略，包括备份恢复，容错，防治恶意攻击登陆，网页防篡改等多项安全管理功能，保证系统安全，可靠，稳定的运行。</p>
-		</div>
-		<div class="span4">
-			 <h2 class="font-large nospace"><i class="fa fa-cubes"></i> 应用模块化</h2>
-             <p>提出全新的应用模式进行扩展，不管是你开发一个小功能还是一个全新的站点，在ThinkCMF中你只是增加了一个APP，每个独立运行互不影响，便于灵活扩展和二次开发。</p>
-		</div>
-		<div class="span4">
-			  <h2 class="font-large nospace"><i class="fa fa-certificate"></i> 免费开源</h2>
-              <p>代码遵循Apache2开源协议，免费使用，对商业用户也无任何限制。</p>
-		</div>
-	</div>
-	
-	<div>
-		<h1 class="text-center">最新资讯</h1>
-		<h3 class="text-center">Last News</h3>
-	</div>
-	<php>
-		$lastnews=sp_sql_posts("cid:$portal_index_lastnews;field:post_title,post_excerpt,object_id,smeta,term_id;order:listorder asc;limit:4;"); 
-	</php>
-	<div class="row">
-		<foreach name="lastnews" item="vo">
-		<php>$smeta=json_decode($vo['smeta'],true);</php>
-		<div class="span3">
-			<div class="tc-gridbox">
-				<div class="header">
-					<div class="item-image">
-						<a href="{:leuu('article/index',array('id'=>$vo['object_id'],'cid'=>$vo['term_id']))}">
-							<if condition="empty($smeta['thumb'])"> 
-								<img src="__TMPL__Public/assets/images/default_tupian1.png" class="img-responsive" alt="{$vo.post_title}"/>
-							<else /> 
-								<img src="{:sp_get_asset_upload_path($smeta['thumb'])}" class="img-responsive img-thumbnail" alt="{$vo.post_title}" />
-							</if>
-						</a>
-					</div>
-					<h3><a href="{:leuu('article/index',array('id'=>$vo['object_id'],'cid'=>$vo['term_id']))}">{$vo.post_title}</a></h3>
-					<hr>
-				</div>
-				<div class="body">
-					<p><a href="{:leuu('article/index',array('id'=>$vo['object_id'],'cid'=>$vo['term_id']))}">{:msubstr($vo['post_excerpt'],0,32)}</a></p>
-				</div>
+		<!--登录栏-->
+		<div class="input">
+			<div class="btnClose"></div>
+			<h2>用户登录</h2>
+			<div class="error"></div>
+			<div class="pass">
+				<input type="text" class="user" name="user_login" id="user_login" placeholder="账号" value="">
+			</div>
+			<div class="pass login_password">
+				<input type="password" class="passWord" id="user_pass" name="user_pass" placeholder="密码">
+				<input type="hidden" name="user_type" value="0">
+			</div>
+			<span class="checkbox">
+				<label class="left">
+				<input type="checkbox" checked="" name="remember" id="remember" style="opacity:0">记住密码
+				</label>
+			</span>
+			<input type="submit" value="登 录" id="dengr" style="cursor: pointer;">
+			<div class="forget">
+				<a href="">立即注册？</a>
+				<a href="">忘记密码了？</a>
+				<a href="">教师登录</a>
 			</div>
 		</div>
-		</foreach>
 	</div>
+</div>
+<div class="clear"></div>
+<div id="js_banner" class="fx_banner" style="width: 1506px; overflow: hidden; zoom: 1;">
+	<div style="background:#008191 no-repeat top center;height: 660px;width: 100%;position: absolute;top: 0;left: 0;"></div>
+	<!--幻灯片开始-->
+	<!--根据分类标识获取幻灯片。如果为空，则使用默认幻灯片-->
+	<php>
+		$home_slides=sp_getslide("home_ppt");
 
-<!--底部-->
-<tc_include file="Public:footer"/>
+		$home_slides=empty($home_slides)?$default_home_slides:$home_slides;
+	</php>
+	<!--开始生成幻灯片-->
+	<ul id="js_banner_img" class="fx_banner_img clear" style="position: relative; left: -9036px; margin-left: 1506px; width: 9036px;">
+		<!--thinkphp的foreach函数,也可以用volist-->
+		<foreach name="home_slides" item="vo">
+			<li style="width: 1506px; float: left;">
+				<!--显示图片内容-->
+				<div class="huodong fx_grid_c1">
+					<div class="left">
+						<img src="{:sp_get_asset_upload_path($vo['slide_pic'])}" width="80%" height="500px" style="margin: 100px 0 0 50px;">
+					</div>
+				</div>
+			</li>
+		</foreach>
+	</ul>
+	<!--幻灯片结束-->
 </div>
 
-<tc_include file="Public:scripts"/>
-<script src="__TMPL__Public/assets/js/slippry.min.js"></script>
-<script>
-$(function() {
-	var demo1 = $("#homeslider").slippry({
-		transition: 'fade',
-		useCSS: true,
-		captions: false,
-		speed: 1000,
-		pause: 3000,
-		auto: true,
-		preload: 'visible'
-	});
-});
-</script>
-{:hook('footer_end')}
+<div class=" con01">
+	<div class="zhuanjia">
+		<h2 class="title">
+			<span>朝夕绘馆专家</span>
+		</h2>
+		<p class="text">集合知名高校、学术研究机构、名师名校长,为儿童阅读提供专业指导</p>
+		<dl>
+			<dt><a href="http://123.207.12.33/zhaoxihuiguan/#"><img src="__TMPL__Public/assets/images/Portal/2042_zhuanjia04.png"></a></dt>
+			<dd><a href="http://123.207.12.33/zhaoxihuiguan/#">谭旭东</a><span>教授</span></dd>
+			<dd>
+				<bdo></bdo>
+				1654
+			</dd>
+		</dl>
+		<dl>
+			<dt><a href="http://123.207.12.33/zhaoxihuiguan/#"><img src="__TMPL__Public/assets/images/Portal/6781_zhuanjia03.png"></a></dt>
+			<dd><a href="http://123.207.12.33/zhaoxihuiguan/#">袁晓峰</a><span>校长</span></dd>
+			<dd>
+				<bdo></bdo>
+				2435
+			</dd>
+		</dl>
+		<dl>
+			<dt><a href="http://123.207.12.33/zhaoxihuiguan/#"><img src="__TMPL__Public/assets/images/Portal/3999_zhuanjia02.png"></a></dt>
+			<dd><a href="http://123.207.12.33/zhaoxihuiguan/#">王蕾</a><span>博士</span></dd>
+			<dd>
+				<bdo></bdo>
+				1268
+			</dd>
+		</dl>
+		<dl>
+			<dt><a href="http://123.207.12.33/zhaoxihuiguan/#"><img src="__TMPL__Public/assets/images/Portal/9299_zhuanjia01.png"></a></dt>
+			<dd><a href="http://123.207.12.33/zhaoxihuiguan/#">谢英新</a><span>专家</span></dd>
+			<dd>
+				<bdo></bdo>
+				1032
+			</dd>
+		</dl>
+
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="share shuku">
+	<h2 class="title">
+		<hr>
+		<span>分级书库</span>
+		<hr>
+	</h2>
+	<p class="text">阅读教育专家因循小学各年级阅读取向、能力水平选择适切的文学读物，<br>提供书目及阅读书单，完成小学语文课程标准规定的各学年课外阅读总量。</p>
+	<div class="resource_list">
+		<a href="http://123.207.12.33/zhaoxihuiguan/index.php/Teacher/Library/detail/id/4" class="resource_pic">
+			<img src="__TMPL__Public/assets/images/Portal/5286_smallPic_1472022575233.jpg">
+		</a>
+		<h4><a href="http://123.207.12.33/zhaoxihuiguan/#" title="">小豆包侦探记</a></h4>
+		<p>王蕾著</p>
+		<div class="cover_stat"><span>1373</span> <span class="ic_share">1270</span></div>
+	</div>
+	<div class="resource_list">
+		<a href="http://123.207.12.33/zhaoxihuiguan/index.php/Teacher/Library/detail/id/5" class="resource_pic">
+			<img src="__TMPL__Public/assets/images/Portal/1953_smallPic_1475047211637.jpg"></a>
+		<h4><a href="http://123.207.12.33/zhaoxihuiguan/#" title="">朝花夕拾</a></h4>
+		<p>鲁迅著</p>
+		<div class="cover_stat"><span>112</span> <span class="ic_share">232</span></div>
+	</div>
+	<div class="resource_list">
+		<a href="http://123.207.12.33/zhaoxihuiguan/index.php/Teacher/Library/detail/id/9094" class="resource_pic">
+			<img src="__TMPL__Public/assets/images/Portal/s29234529.jpg"></a>
+		<h4><a href="http://123.207.12.33/zhaoxihuiguan/#" title="">浪花少年侦探团</a></h4>
+		<p>[日] 东野圭吾著</p>
+		<div class="cover_stat"><span>111</span> <span class="ic_share">222</span></div>
+	</div>
+	<div class="resource_list">
+		<a href="http://123.207.12.33/zhaoxihuiguan/index.php/Teacher/Library/detail/id/6" class="resource_pic">
+			<img src="__TMPL__Public/assets/images/Portal/s1747553.jpg"></a>
+		<h4><a href="http://123.207.12.33/zhaoxihuiguan/#" title="">满月之夜白鲸现</a></h4>
+		<p>[日] 片山恭一著</p>
+		<div class="cover_stat"><span>1</span> <span class="ic_share">2</span></div>
+	</div>
+
+	<div class="clear"></div>
+
+</div>
+<div class="con_line"></div>
+<div class="share ziyuan">
+	<h2 class="title">
+		<hr>
+		<span>阅读教研</span>
+		<hr>
+	</h2>
+	<p class="text">阅读资源共建共享平台，实现教学资源轻松管理、查询、上传及下载分享，切实满足教师阅读教学需求。</p>
+	<div class="resource_list">
+		<a href="http://123.207.12.33/zhaoxihuiguan/index.php/Teacher/Document/documentInfo/id/63" target="_blank">
+			<img src="__TMPL__Public/assets/images/Portal/pdf.jpg" class="resource_pic">
+		</a>
+		<h4>
+			<a href="http://123.207.12.33/zhaoxihuiguan/index.php/Teacher/Document/documentInfo/id/63" target="_blank" title="">
+				北京林业大学录取资料.pdf
+			</a>
+		</h4>
+		<div class="t_name">
+			<a href="http://123.207.12.33/zhaoxihuiguan/index.php/Teacher/Document/someOneHomePage/memberId/15" target="_blank">
+				<img src="__TMPL__Public/assets/images/Portal/5922c74c3a538.jpg">
+				<span> <b>张瑞</b> 兴华学校 </span>
+			</a>
+			<div class="clear"></div>
+		</div>
+		<div class="cover_stat">
+			<span>0</span>
+			<span class="eye">5</span>
+			<span class="down">0</span>
+		</div>
+	</div>
+	<div class="resource_list">
+		<a href="http://123.207.12.33/zhaoxihuiguan/index.php/Teacher/Document/documentInfo/id/61" target="_blank">
+			<img src="__TMPL__Public/assets/images/Portal/xls.jpg" class="resource_pic">
+		</a>
+		<h4>
+			<a href="http://123.207.12.33/zhaoxihuiguan/index.php/Teacher/Document/documentInfo/id/61" target="_blank" title="">
+				《哈利波特 》阅读指导.xlsx
+			</a>
+		</h4>
+		<div class="t_name">
+			<a href="http://123.207.12.33/zhaoxihuiguan/index.php/Teacher/Document/someOneHomePage/memberId/14" target="_blank">
+				<img src="__TMPL__Public/assets/images/Portal/590bd38dbeff8.jpg">
+				<span> <b>于金帅</b> 杭电 </span>
+			</a>
+			<div class="clear"></div>
+		</div>
+		<div class="cover_stat">
+			<span>3</span>
+			<span class="eye">114</span>
+			<span class="down">0</span>
+		</div>
+	</div>
+	<div class="resource_list">
+		<a href="http://123.207.12.33/zhaoxihuiguan/index.php/Teacher/Document/documentInfo/id/59" target="_blank">
+			<img src="__TMPL__Public/assets/images/Portal/doc.jpg" class="resource_pic">
+		</a>
+		<h4>
+			<a href="http://123.207.12.33/zhaoxihuiguan/index.php/Teacher/Document/documentInfo/id/59" target="_blank" title="">
+				返朴归简.docx                    </a>
+		</h4>
+		<div class="t_name">
+			<a href="http://123.207.12.33/zhaoxihuiguan/index.php/Teacher/Document/someOneHomePage/memberId/15" target="_blank">
+				<img src="__TMPL__Public/assets/images/Portal/5922c74c3a538.jpg">                        <span> <b>张瑞</b> 兴华学校 </span>
+			</a>
+			<div class="clear"></div>
+		</div>
+		<div class="cover_stat">
+			<span>0</span>
+			<span class="eye">137</span>
+			<span class="down">0</span>
+		</div>
+	</div>
+
+	<div class="resource_list">
+		<a href="http://123.207.12.33/zhaoxihuiguan/index.php/Teacher/Document/documentInfo/id/58" target="_blank">
+			<img src="__TMPL__Public/assets/images/Portal/doc.jpg" class="resource_pic">
+		</a>
+		<h4>
+			<a href="http://123.207.12.33/zhaoxihuiguan/index.php/Teacher/Document/documentInfo/id/58" target="_blank" title="">
+				如何处理课堂阅读教学与课外拓展阅读的关系.docx
+			</a>
+		</h4>
+		<div class="t_name">
+			<a href="http://123.207.12.33/zhaoxihuiguan/index.php/Teacher/Document/someOneHomePage/memberId/14" target="_blank">
+				<img src="__TMPL__Public/assets/images/Portal/590bd38dbeff8.jpg">
+				<span> <b>于金帅</b> 杭电 </span>
+			</a>
+			<div class="clear"></div>
+		</div>
+		<div class="cover_stat">
+			<span>0</span>
+			<span class="eye">4</span>
+			<span class="down">1</span>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+<div class="con_line"></div>
+<audio id="player" src="http://yqyd-audio.oss-cn-hangzhou.aliyuncs.com/fuck.mp3" controls loop hidden=""></audio>
+
+<!--底部栏-->
+<tc_include file="Public:home_footer" />
+
+<!--侧边-->
+<div class="ctrolPanel">
+	<a class="ios" id="a_ios"><i></i><span>iOS下载</span>
+		<div class="ctrol_box" id="ewm_ios" style="right: 60px; opacity: 0; display: none;"> <!-- style="display:block;"  -->
+			<img src="__TMPL__Public/assets/images/Portal/4553_ios.jpg"> iOS扫描下载
+			<em></em>
+		</div>
+	</a>
+	<a class="android"><i></i><span>安卓下载</span>
+		<div class="ctrol_box" id="ewm_android" style="right: 60px; opacity: 0; display: none;">
+			<img src="__TMPL__Public/assets/images/Portal/3029_android_app.png"> 安卓扫描下载
+			<em></em>
+		</div>
+	</a>
+	<a class="weixin"><i></i><span>关注微信</span>
+		<div class="ctrol_box" id="ewm_wx">
+			<img src="__TMPL__Public/assets/images/Portal/1901_gz_erweima.jpg"> 扫描二维码关注公众号
+			<em></em>
+		</div>
+	</a>
+</div>
+
+</div>
+
 </body>
 </html>

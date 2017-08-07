@@ -346,7 +346,7 @@ CREATE TABLE `lsr_nav` (
   `listorder` int(6) DEFAULT '0' COMMENT '排序',
   `path` varchar(255) NOT NULL DEFAULT '0' COMMENT '层级关系',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='前台导航表';
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='前台导航表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -355,7 +355,7 @@ CREATE TABLE `lsr_nav` (
 
 LOCK TABLES `lsr_nav` WRITE;
 /*!40000 ALTER TABLE `lsr_nav` DISABLE KEYS */;
-INSERT INTO `lsr_nav` VALUES (1,1,0,'首页','','home','',0,0,'0-1'),(2,1,0,'列表演示','','a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"1\";}}','',0,0,'0-2'),(3,1,0,'瀑布流','','a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"2\";}}','',0,0,'0-3'),(4,1,0,'新闻中心','','a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"3\";}}','',1,0,'0-4'),(5,1,0,'渠道合作','','a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"4\";}}','',1,0,'0-5'),(6,1,0,'关于我们','','a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"5\";}}','',1,0,'0-6'),(7,1,0,'帮助中心','','a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"6\";}}','',1,0,'0-7'),(8,1,0,'登录','','home','',1,0,'0-8');
+INSERT INTO `lsr_nav` VALUES (1,1,0,'首页','','home','',0,0,'0-1'),(2,1,0,'列表演示','','a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"1\";}}','',0,0,'0-2'),(3,1,0,'瀑布流','','a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"2\";}}','',0,0,'0-3'),(4,1,0,'新闻中心','','a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"3\";}}','',1,0,'0-4'),(5,1,0,'渠道合作','','a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"4\";}}','',1,0,'0-5'),(6,1,0,'关于我们','','a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"5\";}}','',1,0,'0-6'),(7,1,0,'帮助中心','','a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"6\";}}','',1,0,'0-7'),(8,1,0,'登录','','home','',1,0,'0-8'),(9,2,0,'新闻中心','','a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"3\";}}','',1,0,'0-9'),(10,2,0,'渠道合作','','a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"4\";}}','',1,0,'0-10'),(11,2,0,'关于我们','','a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"5\";}}','',1,0,'0-11'),(12,2,0,'帮助中心','','a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"6\";}}','',1,0,'0-12');
 /*!40000 ALTER TABLE `lsr_nav` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -372,7 +372,7 @@ CREATE TABLE `lsr_nav_cat` (
   `active` int(1) NOT NULL DEFAULT '1' COMMENT '是否为主菜单，1是，0不是',
   `remark` text COMMENT '备注',
   PRIMARY KEY (`navcid`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='前台导航分类表';
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='前台导航分类表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -381,7 +381,7 @@ CREATE TABLE `lsr_nav_cat` (
 
 LOCK TABLES `lsr_nav_cat` WRITE;
 /*!40000 ALTER TABLE `lsr_nav_cat` DISABLE KEYS */;
-INSERT INTO `lsr_nav_cat` VALUES (1,'主导航',1,'主导航');
+INSERT INTO `lsr_nav_cat` VALUES (1,'主导航',1,'主导航'),(2,'首页',0,'');
 /*!40000 ALTER TABLE `lsr_nav_cat` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -682,7 +682,7 @@ CREATE TABLE `lsr_suggest` (
   `suggest_address` varchar(100) NOT NULL DEFAULT '' COMMENT '反馈人信息',
   `createtime` datetime DEFAULT NULL COMMENT '反馈时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -841,4 +841,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-08-04 22:42:29
+-- Dump completed on 2017-08-07 16:31:08
