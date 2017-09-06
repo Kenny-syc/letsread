@@ -815,7 +815,7 @@ p.text {
 
 .ctrolPanel a i {
     display: block;
-    background: url(../images/fankui.png) no-repeat;
+    background: url(../../images/Portal/fankui.png) no-repeat;
     width: 39px;
     margin: 0 auto 6px auto;
 }
@@ -859,7 +859,7 @@ p.text {
 .ctrolPanel a .ctrol_box em {
     position: absolute;
     display: block;
-    background: url(../images/fankui.png) no-repeat -81px -85px;
+    background: url(../../images/Portal/fankui.png) no-repeat -81px -85px;
     right: -9px;
     top: 124px;
     width: 9px;

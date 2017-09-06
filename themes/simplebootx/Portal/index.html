@@ -57,7 +57,7 @@
 			</span>
 			<input type="submit" value="登 录" id="dengr" style="cursor: pointer;">
 			<div class="forget">
-				<a href="">立即注册？</a>
+				<a href="{:leuu('user/StudentRegister/index')}">立即注册？</a>
 				<a href="">忘记密码了？</a>
 				<a href="">教师登录</a>
 			</div>
@@ -299,6 +299,36 @@
 </div>
 
 </div>
+
+<script type="text/javascript">
+    $(".ios").hover(
+        function () {
+            $("#ewm_ios").stop(false).animate({right: "100px", opacity: 1}, 500).show();
+        },
+        function () {
+            $("#ewm_ios").stop(false).animate({right: "60px", opacity: 0}, 500).hide();
+        }
+    );
+
+    $(".android").hover(
+        function () {
+            $("#ewm_android").stop(false).animate({right: "100px", opacity: 1}, 500).show();
+        },
+        function () {
+            $("#ewm_android").stop(false).animate({right: "60px", opacity: 0}, 500).hide();
+        }
+    );
+
+    $(".weixin").hover(
+        function () {
+            $("#ewm_wx").stop(false).animate({right: "100px", opacity: 1}, 500).show();
+        },
+        function () {
+            $("#ewm_wx").stop(false).animate({right: "60px", opacity: 0}, 500).hide();
+        }
+    );
+
+</script>
 
 </body>
 </html>

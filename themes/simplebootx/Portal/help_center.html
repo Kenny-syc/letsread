@@ -6,6 +6,19 @@
 
     <link rel="stylesheet" href="__TMPL__Public/assets/css/Portal/help_center.css">
     <script src="__TMPL__Public/assets/js/Portal/help_center.js"></script>
+    <style>
+        /*悬浮窗*/
+        .floating{
+            visibility:visible;
+            height:270px;
+            width:100px;
+            position:fixed;
+            right:0px;
+            bottom:0px;
+            z-index:1px;
+        }
+        /*悬浮窗*/
+    </style>
 </block>
 
 <block name="main">
@@ -221,7 +234,10 @@
     </script>
     <!--意见反馈-->
 
-
-
 </block>
 
+<block name="floatwindow">
+    <div class="floating">
+        <img src="__TMPL__Public/assets/images/cartoon-red-jump.png" />
+    </div>
+</block>
