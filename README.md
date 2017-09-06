@@ -18,7 +18,7 @@ ThinkCMF是一款基于PHP+MYSQL开发的中文内容管理框架。ThinkCMF提�
 ThinkCMF2.2.3官方文档：https://www.thinkcmf.com/document/index.html
 ThinkCMF2.2.3操作指南：https://www.kancloud.cn/d113211/mf/278795
 
-教程推荐：网易公开课thinkcmf,（很好建议前端和后台都看一下）
+教程推荐：网易云课堂thinkcmf,（很好建议前端和后台都看一下）
         http://www.91freeweb.com/article/index/id/2.shtml；
 
 ##快速入门
